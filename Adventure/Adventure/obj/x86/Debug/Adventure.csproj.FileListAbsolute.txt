@@ -1,0 +1,5 @@
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\obj\x86\Debug\Adventure.csprojResolveAssemblyReference.cache
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\Adventure.exe
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\Adventure.pdb
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\obj\x86\Debug\Adventure.exe
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\obj\x86\Debug\Adventure.pdb

@@ -2,11 +2,22 @@
 
 namespace Adventure
 {
-	public class Menu
+	public class Menu : IUpdate
 	{
 		public Menu ()
 		{
+            Program.Register(this);
 		}
+
+        public void Update(EKeys Command)
+        {
+
+        }
+
+        public void Render()
+        {
+
+        }
 	}
 }
 
