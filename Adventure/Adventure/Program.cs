@@ -6,8 +6,7 @@ namespace Adventure
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Rens!!!");
-            //asdasd
+			
 		}
 	}
 }
