@@ -11,7 +11,11 @@ namespace Adventure
 
         public void Update(EKeys Command)
         {
-
+			switch (Command) {
+			case EKeys.UP:
+				Console.WriteLine ("hallo omhoog");
+				break;
+			}
         }
 
         public void Render()

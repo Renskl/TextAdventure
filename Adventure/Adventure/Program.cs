@@ -9,8 +9,11 @@ namespace Adventure
         public static EKeys command;
         public static List<IUpdate> updateables = new List<IUpdate>();
 
+		public static Menu mainMenu;
+
         public static void Main (string[] args)
 		{
+			mainMenu = new Menu ();
             while (isRunning)
             {
                 Update(Input());
@@ -47,7 +50,6 @@ namespace Adventure
             {
                 u.Update(Command);
             }
-            Console.WriteLine(Command);
         }
 
         private static void Render()
