@@ -6,7 +6,8 @@ namespace Adventure
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+			Console.WriteLine ("Rens!!!");
+            //asdasd
 		}
 	}
 }
