@@ -13,11 +13,14 @@ namespace Adventure
 
         public static void Main (string[] args)
 		{
+
 			mainMenu = new Menu ();
+            mainMenu.AddOption("Option1");
+            mainMenu.AddOption("Option2");
+
             while (isRunning)
             {
                 Update(Input());
-                Render();
             }
 		}
 
@@ -49,12 +52,8 @@ namespace Adventure
             foreach (IUpdate u in updateables)
             {
                 u.Update(Command);
+                u.Render();
             }
-        }
-
-        private static void Render()
-        {
-
         }
 
         public static void Register(IUpdate updateable)
