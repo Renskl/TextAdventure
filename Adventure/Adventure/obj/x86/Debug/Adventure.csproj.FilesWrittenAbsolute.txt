@@ -3,3 +3,5 @@
 /Users/renskloosterhuis/GitHub/TextAdventure/Adventure/Adventure/bin/Debug/Adventure.exe
 /Users/renskloosterhuis/GitHub/TextAdventure/Adventure/Adventure/obj/x86/Debug/Adventure.exe
 /Users/renskloosterhuis/GitHub/TextAdventure/Adventure/Adventure/obj/x86/Debug/Adventure.exe.mdb
+/Users/renskloosterhuis/GitHub/TextAdventure/Adventure/Adventure/bin/Debug/System.Drawing.dll
+/Users/renskloosterhuis/GitHub/TextAdventure/Adventure/Adventure/bin/Debug/OpenTK.dll

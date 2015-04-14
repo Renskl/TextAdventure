@@ -19,7 +19,6 @@ namespace Adventure
             window = new GameWindow();
             GL.Viewport(0, 0, window.Width, window.Height);
             window.RenderFrame += RenderFrame;
-
             // Run the game at 60 updates per second
             window.Run(60.0);
         }
