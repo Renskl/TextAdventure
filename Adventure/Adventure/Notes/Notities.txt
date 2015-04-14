@@ -9,3 +9,9 @@ Drugs:
 
 Je moet drugs kunnen kopen en verkopen.
 
+Drugseffecten:
+HIGH
+LAME
+PSYCH
+BAD
+CONNECTED

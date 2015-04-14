@@ -3,3 +3,7 @@ D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\D
 D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\Adventure.pdb
 D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\obj\x86\Debug\Adventure.exe
 D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\obj\x86\Debug\Adventure.pdb
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\OpenTK.dll
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\OpenTK.pdb
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\OpenTK.xml
+D:\Applications\Dropbox\Documents\GitHub\TextAdventure\Adventure\Adventure\bin\Debug\System.Drawing.dll
