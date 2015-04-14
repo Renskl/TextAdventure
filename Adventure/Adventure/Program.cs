@@ -18,20 +18,22 @@ namespace Adventure
         {
             window = new GameWindow();
             GL.Viewport(0, 0, window.Width, window.Height);
+            window.Load += Load;
             window.RenderFrame += RenderFrame;
+            window.UpdateFrame += UpdateFrame;
+            window.Resize += Resize;
             // Run the game at 60 updates per second
             window.Run(60.0);
         }
 
         private static void Load(Object Sender, FrameEventArgs e)
         {
-
+            window.VSync = VSyncMode.On;
         }
 
         private static void UpdateFrame(Object sender, FrameEventArgs e)
         {
 
-            //test
         }
 
         private static void RenderFrame(Object sender, FrameEventArgs e)
