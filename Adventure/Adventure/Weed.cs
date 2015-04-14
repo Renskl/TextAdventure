@@ -2,9 +2,9 @@
 
 namespace Adventure
 {
-	public class Drug
+	public class Weed
 	{
-		public Drug ()
+		public Weed ()
 		{
 		}
 	}
