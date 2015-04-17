@@ -1,4 +1,7 @@
-﻿using System;
+﻿#define DEBUG
+#define KEYBOARD_INPUT
+
+using System;
 using System.Drawing;
 using System.Collections.Generic;
 using OpenTK;
@@ -13,20 +16,29 @@ namespace Adventure
         public static bool isRunning = true;
         public static GameWindow window;
 
+        //TMP
+        public static Sprite spr;
         [STAThread]
         public static void Main(string[] args)
         {
-            window = new GameWindow();
-            GL.Viewport(0, 0, window.Width, window.Height);
+#if (DEBUG)
+            Logger.Log(Logger.Severity.LOGMESSAGE, "Automaton2D (c) 2015. Developed by Matthias Calis and Rens Kloosterhuis using OpenTK 1.1");
+#endif 
+            window = new GameWindow(Properties.Settings.Default.Width, Properties.Settings.Default.Height);
+            GL.Viewport(0, 0, window.Width, window.Height); 
             window.Load += Load;
             window.RenderFrame += RenderFrame;
             window.UpdateFrame += UpdateFrame;
+            window.Closing += Cleanup;
             window.Resize += Resize;
-            // Run the game at 60 updates per second
-            window.Run(60.0);
+#if (DEBUG)
+            Logger.Log(Logger.Severity.LOGMESSAGE, "Window created, window event delegates coupled...");
+#endif
+            spr = new Sprite(new Entity.Position(0, 0), new Entity.Size(64,64), "D:\\Applications\\Dropbox\\Photos\\Tiles\\red.png");
+            window.Run(Properties.Settings.Default.DefaultUpdateRate, Properties.Settings.Default.DefaultFramerate);
         }
 
-        private static void Load(Object Sender, FrameEventArgs e)
+        private static void Load(Object Sender, EventArgs e)
         {
             window.VSync = VSyncMode.On;
         }
@@ -41,27 +53,29 @@ namespace Adventure
             // render graphics
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
+            GL.EnableClientState(ArrayCap.VertexArray);
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
-            GL.Ortho(-1.0, 1.0, -1.0, 1.0, 0.0, 4.0);
+            GL.Ortho(0, window.Width, 0, window.Height, 0.0, 4.0);
 
-            GL.Begin(PrimitiveType.Triangles);
+            // Sprites should be rendered here...essentially everything that
+            // needs EnableClientState(VertexArray)
 
-            GL.Color3(Color.MidnightBlue);
-            GL.Vertex2(-1.0f, 1.0f);
-            GL.Color3(Color.SpringGreen);
-            GL.Vertex2(0.0f, -1.0f);
-            GL.Color3(Color.Ivory);
-            GL.Vertex2(1.0f, 1.0f);
+            spr.Render();
 
-            GL.End();
+            GL.DisableClientState(ArrayCap.VertexArray);
 
             window.SwapBuffers();
         }
 
-        private static void Resize(Object sender, FrameEventArgs e)
+        private static void Resize(Object sender, EventArgs e)
         {
 
+        }
+
+        private static void Cleanup(Object Sender, EventArgs e)
+        {
+            spr.Cleanup();
         }
     }
 }
