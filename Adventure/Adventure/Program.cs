@@ -31,6 +31,10 @@ namespace Adventure
             window.UpdateFrame += UpdateFrame;
             window.Closing += Cleanup;
             window.Resize += Resize;
+            window.KeyUp += KeyUp;
+            window.KeyDown += KeyDown;
+            window.KeyPress += KeyPress;
+           
 #if (DEBUG)
             Logger.Log(Logger.Severity.LOGMESSAGE, "Window created, window event delegates coupled...");
 #endif
@@ -45,7 +49,15 @@ namespace Adventure
 
         private static void UpdateFrame(Object sender, FrameEventArgs e)
         {
-
+            var mouse = Mouse.GetState();
+            if (mouse[MouseButton.Left])
+            {
+                Logger.Log(Logger.Severity.LOGMESSAGE, "Left press!");
+            }
+            else if (mouse[MouseButton.Right])
+            {
+                Logger.Log(Logger.Severity.LOGMESSAGE, "Right press!");
+            }
         }
 
         private static void RenderFrame(Object sender, FrameEventArgs e)
@@ -61,7 +73,11 @@ namespace Adventure
             // Sprites should be rendered here...essentially everything that
             // needs EnableClientState(VertexArray)
 
+            // Also, think about Batching sprites. 
+            // Binding and re-binding textures is expensive so all matching TextureId's should be lumped together to make the best use of Texture binding
             spr.Render();
+
+            
 
             GL.DisableClientState(ArrayCap.VertexArray);
 
@@ -76,6 +92,31 @@ namespace Adventure
         private static void Cleanup(Object Sender, EventArgs e)
         {
             spr.Cleanup();
+        }
+
+        private static void KeyUp(Object Sender, KeyboardKeyEventArgs e)
+        {
+
+        }
+
+        private static void KeyDown(Object Sender, KeyboardKeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Up:
+                    spr.Translate(0.0f, 1.0f);
+                    break;
+                case Key.Down:
+                    spr.Translate(0.0f, -1.0f);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private static void KeyPress(Object Sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Automaton2DLogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Adventure" version="1.0.5585.7221" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Adventure" version="1.0.5585.9426" language="neutral" processorArchitecture="x86" />
     <commandLine file="Adventure.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Adventure.exe" size="49136">
-      <assemblyIdentity name="Adventure" version="1.0.5585.7221" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Adventure.exe" size="47088">
+      <assemblyIdentity name="Adventure" version="1.0.5585.9426" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nU1TuErxPJM9MIK33xr+djnBEBlMjzTRdl/bznb0Jrc=</dsig:DigestValue>
+        <dsig:DigestValue>1a67ZcwBDd9NmXmdUduDIBCJE5x+3CxR+jzRbkBEMoU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,6 +73,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>GPi+igvowQ3rT8PO8qzjbiyzjeBXqcMRput/Bp1Fr20=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\red.png" size="2880">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WXFTIJoa3nHbQAV82JccmVN7oKSaKPMX0iLnbHv3Fug=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Automaton2DLogo.ico" size="32038">
