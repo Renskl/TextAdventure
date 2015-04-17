@@ -34,7 +34,7 @@ namespace Adventure
 #if (DEBUG)
             Logger.Log(Logger.Severity.LOGMESSAGE, "Window created, window event delegates coupled...");
 #endif
-            spr = new Sprite(new Entity.Position(0, 0), new Entity.Size(64,64), "D:\\Applications\\Dropbox\\Photos\\Tiles\\red.png");
+            spr = new Sprite(new Entity.Position(0, 0), new Entity.Size(64,64), "Assets\\red.png");
             window.Run(Properties.Settings.Default.DefaultUpdateRate, Properties.Settings.Default.DefaultFramerate);
         }
 

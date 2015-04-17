@@ -96,6 +96,9 @@
     <Compile Include="TextureManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\red.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Automaton2DLogo.ico" />
     <Content Include="Notes\Notities.txt" />
   </ItemGroup>

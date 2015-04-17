@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Automaton2DLogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Adventure" version="1.0.5585.7131" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Adventure" version="1.0.5585.7221" language="neutral" processorArchitecture="x86" />
     <commandLine file="Adventure.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Adventure.exe" size="46064">
-      <assemblyIdentity name="Adventure" version="1.0.5585.7131" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Adventure.exe" size="49136">
+      <assemblyIdentity name="Adventure" version="1.0.5585.7221" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GM0vLxgjJeaKqqc0nr3ryKFyW32FxBDRZ67zpdhi6KM=</dsig:DigestValue>
+        <dsig:DigestValue>nU1TuErxPJM9MIK33xr+djnBEBlMjzTRdl/bznb0Jrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
