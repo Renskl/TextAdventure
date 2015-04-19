@@ -42,5 +42,6 @@ namespace Adventure
         public abstract void Render();
         public abstract void Update();
         public abstract void Cleanup();
+
     }
 }

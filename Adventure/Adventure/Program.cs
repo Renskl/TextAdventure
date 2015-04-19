@@ -31,9 +31,11 @@ namespace Adventure
             window.UpdateFrame += UpdateFrame;
             window.Closing += Cleanup;
             window.Resize += Resize;
+#if (KEYBOARD_INPUT)
             window.KeyUp += KeyUp;
             window.KeyDown += KeyDown;
             window.KeyPress += KeyPress;
+#endif
            
 #if (DEBUG)
             Logger.Log(Logger.Severity.LOGMESSAGE, "Window created, window event delegates coupled...");
@@ -45,6 +47,16 @@ namespace Adventure
         private static void Load(Object Sender, EventArgs e)
         {
             window.VSync = VSyncMode.On;
+            /***
+             * We're not changing the Projection anywhere else, so we
+             * only need to set the state once.
+             * ***/
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+            GL.Ortho(0, window.Width, 0, window.Height, 0.0, 4.0);
+            Input.InputManager.AssignCommand(Input.InputManager.Action.MOVE_LEFT, new Input.TestCommand());
         }
 
         private static void UpdateFrame(Object sender, FrameEventArgs e)
@@ -57,7 +69,7 @@ namespace Adventure
             else if (mouse[MouseButton.Right])
             {
                 Logger.Log(Logger.Severity.LOGMESSAGE, "Right press!");
-            }
+            }            
         }
 
         private static void RenderFrame(Object sender, FrameEventArgs e)
@@ -66,9 +78,7 @@ namespace Adventure
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             GL.EnableClientState(ArrayCap.VertexArray);
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(0, window.Width, 0, window.Height, 0.0, 4.0);
+
 
             // Sprites should be rendered here...essentially everything that
             // needs EnableClientState(VertexArray)
@@ -76,8 +86,6 @@ namespace Adventure
             // Also, think about Batching sprites. 
             // Binding and re-binding textures is expensive so all matching TextureId's should be lumped together to make the best use of Texture binding
             spr.Render();
-
-            
 
             GL.DisableClientState(ArrayCap.VertexArray);
 
@@ -89,6 +97,7 @@ namespace Adventure
 
         }
 
+#if (KEYBOARD_INPUT)
         private static void Cleanup(Object Sender, EventArgs e)
         {
             spr.Cleanup();
@@ -104,16 +113,22 @@ namespace Adventure
             switch (e.Key)
             {
                 case Key.Up:
-                    spr.Translate(0.0f, 1.0f);
+                    spr.Translate(0.0f, 5.0f);
                     break;
                 case Key.Down:
-                    spr.Translate(0.0f, -1.0f);
+                    spr.Translate(0.0f, -5.0f);
+                    break;
+                case Key.Left:
+                    spr.Translate(5.0f, 0.0f);
+                    break;
+                case Key.Right:
+                    spr.Translate(-5.0f, 0.0f);
                     break;
                 default:
                     break;
             }
         }
-
+#endif
         private static void KeyPress(Object Sender, KeyPressEventArgs e)
         {
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenTK.Graphics.OpenGL;
+using OpenTK;
 
 namespace Adventure
 {
@@ -13,6 +14,7 @@ namespace Adventure
         private uint VertexBufferObjectHandle;
         private int TextureId;
         private float[] vertices;
+        private float deltaX, deltaY;
 
         public Sprite(Position position, Size size, string filename) : base(position, size)
         {
@@ -39,12 +41,20 @@ namespace Adventure
              ***/
             if (TextureId >= 0)
             {
+
                 GL.Enable(EnableCap.Texture2D);
                 GL.BindTexture(TextureTarget.Texture2D, TextureId);
+
                 GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObjectHandle);
                 GL.VertexPointer(3, VertexPointerType.Float, 0, 0);
+               
                 GL.DrawArrays(PrimitiveType.Quads, 0, vertices.Length);
+                
                 GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+                //GL.PopMatrix();
+
+                GL.Translate(new Vector3(deltaX, deltaY, 0.0f));
+                deltaX = 0; deltaY = 0;
             }
         }
 
@@ -56,6 +66,12 @@ namespace Adventure
         public override void Cleanup()
         {
             GL.DeleteBuffer(VertexBufferObjectHandle);
+        }
+
+        public void Translate(float dx, float dy)
+        {
+            deltaX += dx;
+            deltaY += dy;
         }
     }
 }
